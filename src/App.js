@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useCallback } from "react";
+import Form from "./Form";
 
-function App() {
+export default function App() {
+  const handleFormDataSubmission = useCallback((formData) => {
+    //use axios to post it
+    console.log(formData);
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>MultiStep Form</h1>
+      <Form handleFormDataSubmission={handleFormDataSubmission} />
     </div>
   );
 }
-
-export default App;
